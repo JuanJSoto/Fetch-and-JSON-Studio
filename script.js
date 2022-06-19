@@ -16,13 +16,20 @@ window.addEventListener("load", function() {
                         <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
                         <ul>
                             <li>Hours in space: ${astronaut.hoursInSpace}</li>
-                            <li>Active: ${astronaut.active}</li>
+                            <li id= "${astronaut.firstName}">Active: ${astronaut.active}</li>
                             <li>Skills: ${astronaut.skills}</li>
                         </ul>
                     </div>
                     <img class="avatar" src=${astronaut.picture} alt="astronauts"></img>
                 </div>
                 `; 
+                let element = document.getElementById(`${astronaut.firstName}`);
+                if(astronaut.active){
+                    element.style.color = "green";
+                }
+                if(astronaut.active == false){
+                    element.style.color = "red";
+                }
             };
         });
     });
